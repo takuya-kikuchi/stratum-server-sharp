@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Immutable;
 using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Sockets;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
 using AustinHarris.JsonRpc;
-using NBitcoin;
-using NBitcoin.Crypto;
-using NBitcoin.RPC;
-using Newtonsoft.Json;
-using stratum_server_sharp.Bitcoin;
 
 namespace stratum_server_sharp
 {
