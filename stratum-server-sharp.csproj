@@ -6,4 +6,10 @@
         <RootNamespace>stratum_server_sharp</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AustinHarris.JsonRpc" Version="1.1.70" />
+      <PackageReference Include="AustinHarris.JsonRpc.AspNet" Version="1.1.70" />
+      <PackageReference Include="NBitcoin" Version="4.1.1.82" />
+    </ItemGroup>
+
 </Project>
