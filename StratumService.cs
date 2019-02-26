@@ -28,6 +28,12 @@ namespace stratum_server_sharp
         }
 
         [JsonRpcMethod("mining.subscribe")]
-        private object subscribe() => SubscribeResponse.Create("hoge", "08000002", 4);
+        private object subscribe(string userAgent) => SubscribeResponse.Create("hoge", "010d3a11", 8);
+
+        [JsonRpcMethod("mining.submit")]
+        private bool submit(string username, string jobid, string extranonce2, string ntime) => true;
+
+        [JsonRpcMethod("mining.multi_version")]
+        private bool multiVersion(int param) => true;
     }
 }

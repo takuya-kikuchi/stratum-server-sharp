@@ -20,7 +20,7 @@ namespace stratum_server_sharp
 
         public static TcpServer Create(int listenPort)
         {
-            var server = new TcpListener(IPAddress.Parse("127.0.0.1"), listenPort);
+            var server = new TcpListener(IPAddress.Parse("0.0.0.0"), listenPort);
             server.Start();
             Console.WriteLine(" You can connected with Putty on a (RAW session) to {0} to issue JsonRpc requests.",
                 server.LocalEndpoint);
@@ -58,11 +58,12 @@ namespace stratum_server_sharp
 
                 Console.WriteLine("REQUEST: {0}", line);
             }
+            Console.WriteLine("Done");
         }
 
         public Task Notify(string message)
         {
-            return client.Client.SendAsync(Encoding.UTF8.GetBytes(message), SocketFlags.None);
+            return client.Client.SendAsync(Encoding.UTF8.GetBytes(message + "\n"), SocketFlags.None);
         }
     }
 }
