@@ -88,9 +88,10 @@ namespace stratum_server_sharp
 
         private static async Task NotifyDifficultyAsync(TcpServer tcpServer, int difficulty)
         {
-            await tcpServer.Notify(
-                "{ \"id\": null, \"method\": \"mining.set_difficulty\", \"params\": [" +
-                difficulty + "]}");
+            var msg = "{ \"id\": null, \"method\": \"mining.set_difficulty\", \"params\": [" +
+                      difficulty + "]}";
+            await tcpServer.Notify(msg);
+            Console.WriteLine($"SEND: {msg}");
         }
 
         private static async Task NotifyNewJobAsync(TcpServer tcpServer)
@@ -102,8 +103,9 @@ namespace stratum_server_sharp
                       "\", \"4d16b6f85af6e2198f44ae2a6de67f78487ae5611b77c6c0440b921e00000000\", \"01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff20020862062f503253482f04b8864e5008\", \"072f736c7573682f000000000100f2052a010000001976a914d23fcdf86f7e756a64a7a9688ef9903327048ed988ac00000000\", [], \"00000002\", \"1c2ac4af\", \"" +
                       nTimeStr + "\", true], \"id\": null, \"method\": \"mining.notify\"}";
 
-            await tcpServer.Notify(
-                msg);
+            await tcpServer.Notify(msg);
+
+            Console.WriteLine($"SEND: {msg}");
         }
     }
 }

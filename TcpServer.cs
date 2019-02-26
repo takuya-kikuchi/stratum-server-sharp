@@ -56,7 +56,7 @@ namespace stratum_server_sharp
                 var line = reader.ReadLine();
                 handleRequest(writer, line);
 
-                Console.WriteLine("REQUEST: {0}", line);
+                Console.WriteLine("RECEIVE: {0}", line);
             }
             Console.WriteLine("Done");
         }
